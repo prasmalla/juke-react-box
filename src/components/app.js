@@ -8,6 +8,7 @@ class App extends Component {
       sounds: Object.keys(Sounds),
     };
     this.playSound = this.playSound.bind(this);
+    this.stopSound = this.stopSound.bind(this);
   }
 
   playSound(eventObj) {
@@ -16,6 +17,12 @@ class App extends Component {
     const soundToPlay = eventObj.currentTarget.id;
     Sounds[soundToPlay].currentTime = 0;
     Sounds[soundToPlay].play();
+  }
+
+  stopSound() { // stop all sounds
+    for (let stop in this.state.sounds)
+      Sounds[this.state.sounds[stop]].pause();
+    console.log('stopped');
   }
 
   render() {
@@ -33,6 +40,13 @@ class App extends Component {
       <div className="button-container">
         {/* Components that need to be returned from App go below here ! */}
         {buttons}
+        <div
+          // Add stop button
+          className="button"
+          onClick={this.stopSound}
+        >
+          <p>STOP</p>
+        </div>
       </div>
     );
   }
