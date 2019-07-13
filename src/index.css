@@ -20,7 +20,7 @@ code {
   display: grid;
   grid-gap: 10px;
   grid-template: auto/ 1fr 1fr 1fr 1fr;
-
+  margin: 2em 0 0;
 }
 
 .button {
@@ -34,4 +34,24 @@ code {
   text-transform: uppercase;
   background: linear-gradient(to top, rgb(255, 253, 131), rgb(255, 230, 0));
   box-shadow: 3px 3px #ffd000;
+  overflow: hidden;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  display: inline;
+  margin: 0 1em 0 0;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:visited {
+  color: white;
+}
+a.active, a:active, a:hover {
+  color: green;
 }
